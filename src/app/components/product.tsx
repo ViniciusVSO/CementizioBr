@@ -4,11 +4,7 @@ import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
-  motion,
-  useInView,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
+  motion
 } from "framer-motion";
 import Link from "next/link";
 
