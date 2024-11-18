@@ -1,12 +1,11 @@
 "use client";
 
-import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import EmblaSlide from "./EmblaSlide";
 import Autoplay from "embla-carousel-autoplay";
 
 export default function EmblaCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   return (
     <div className="embla" ref={emblaRef}>

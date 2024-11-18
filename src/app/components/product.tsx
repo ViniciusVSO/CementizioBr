@@ -7,7 +7,6 @@ import {
   motion
 } from "framer-motion";
 import Link from "next/link";
-import Autoplay from "embla-carousel-autoplay";
 
 const products = [
   {
