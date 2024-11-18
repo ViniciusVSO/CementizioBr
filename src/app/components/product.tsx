@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 
-let products = [
+const products = [
   {
     name: "Aquila Reale",
     description:
@@ -51,17 +51,6 @@ export default function Product() {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
-
-  const resetAutoplay = useCallback(() => {
-    if (autoplayInterval) {
-      clearInterval(autoplayInterval);
-    }
-
-    const newInterval = setInterval(() => {
-      emblaApi?.scrollNext();
-    }, 15000);
-    setAutoplayInterval(newInterval);
-  }, [autoplayInterval, emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;

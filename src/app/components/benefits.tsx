@@ -14,10 +14,9 @@ import {
   Thermometer,
   Users,
 } from "lucide-react";
-import { useState } from "react";
 import {motion} from "framer-motion";
 
-let benefits = [
+const benefits = [
   {
     name: "Materiais de Alta Qualidade",
     description:
@@ -57,11 +56,7 @@ let benefits = [
 ];
 
 export default function Benefits() {
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleBenefitClick = (index: number) => {
-    setActiveIndex(index);
-  };
   return (
     <div  className="w-full">
       <motion.div initial={{

@@ -7,11 +7,10 @@ import Link from "next/link";
 import NavItem from "./sub-components/navItem";
 import { Menu } from "lucide-react";
 import ThemeToggle from "./sub-components/themeToggle";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

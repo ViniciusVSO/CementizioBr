@@ -12,7 +12,7 @@ import { Mail } from "lucide-react";
 import SocialMediaLink from "./sub-components/socialMediaLinks";
 import { useEffect, useState } from "react";
 
-let socialLinks = [
+const socialLinks = [
   {
     socialName: "@cementizio",
     Icon: IconBrandInstagram,
@@ -34,26 +34,7 @@ let socialLinks = [
 ];
 
 export default function Footer() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Persistir e sincronizar tema, se necessário
-  useEffect(() => {
-    const checkDarkMode = () => {
-      setIsDarkMode(document.documentElement.classList.contains("dark"));
-    };
-
-    checkDarkMode();
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", checkDarkMode);
-
-    return () => {
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", checkDarkMode);
-    };
-  }, []);
+  
 
   return (
     <div className="w-full shadow-top-sh " id="contato">
