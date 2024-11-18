@@ -7,6 +7,7 @@ import {
   motion
 } from "framer-motion";
 import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 
 const products = [
   {
@@ -44,8 +45,6 @@ const products = [
 export default function Product() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [autoplayInterval, setAutoplayInterval] =
-    useState<NodeJS.Timeout | null>(null);
 
   const handleSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -58,7 +57,6 @@ export default function Product() {
     const autoplay = setInterval(() => {
       emblaApi.scrollNext();
     }, 15000);
-    setAutoplayInterval(autoplay);
 
     return () => clearInterval(autoplay);
   }, [emblaApi]);

@@ -10,7 +10,6 @@ import {
 } from "@tabler/icons-react";
 import { Mail } from "lucide-react";
 import SocialMediaLink from "./sub-components/socialMediaLinks";
-import { useEffect, useState } from "react";
 
 const socialLinks = [
   {

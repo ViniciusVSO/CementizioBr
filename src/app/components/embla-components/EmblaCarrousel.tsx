@@ -8,12 +8,6 @@ import Autoplay from "embla-carousel-autoplay";
 export default function EmblaCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
-  const autoScroll = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
- 
-
   return (
     <div className="embla" ref={emblaRef}>
       <div className="emblaContainer  w-full h-full ">
