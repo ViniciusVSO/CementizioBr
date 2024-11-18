@@ -23,7 +23,7 @@ const socialLinks = [
     link: "https://www.linkedin.com/company/cementizio",
   },
   {
-    socialName: "sac@cementizio.com.br",
+    socialName: "comercial@cementizio.com.br",
     Icon: Mail,
   },
   {
