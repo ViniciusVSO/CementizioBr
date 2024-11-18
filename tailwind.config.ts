@@ -9,7 +9,6 @@ const config: Config = {
   ],
   theme: {
   	container: {
-  		center: 'true',
   		padding: '16px'
   	},
   	fontFamily: {
@@ -17,6 +16,46 @@ const config: Config = {
   		secondary: 'var(--font-raleway)'
   	},
   	extend: {
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
   		colors: {
   			primary: '#0C0C0C',
   			secondary: '#fff',
@@ -26,7 +65,11 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		screens: {
+			response : {max: '990px'},
+			tablet: {max: '768px'}
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
