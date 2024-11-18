@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: ["class"],
+    darkMode: "class",
     content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -57,7 +57,7 @@ const config: Config = {
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		colors: {
-  			primary: '#0C0C0C',
+  			primary: '#060606',
   			secondary: '#fff',
   			pastel: '#D9D9D9'
   		},
@@ -69,6 +69,9 @@ const config: Config = {
 		screens: {
 			response : {max: '990px'},
 			tablet: {max: '768px'}
+		},
+		boxShadow: {
+			'top-sh': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
 		}
   	}
   },

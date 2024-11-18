@@ -38,10 +38,10 @@ let products = [
     picture: "/volare.png",
   },
   {
-    name: "Assicella",
+    name: "Ottanta",
     description:
-      "Simples e moderno, essas são as características principais desse revestimento, que traz consigo um aspecto que remete ao painel ripado que virou tendência nas decorações de ambientes e mobiliários da atualidade. Por ser produzida com nosso cimento, essa peça possui diversas vantagens em relação ao ripado convencional que é produzido em madeira.",
-    picture: "/assicella.png",
+      "Uma das principais vantagens do piso Ottanta é a sua característica atérmica, o que significa que ele não absorve calor, mesmo em dias quentes de verão. Isso é possível graças à sua composição, que combina cimento, agregados minerais e pigmentos de alta qualidade. Dessa forma, o piso se mantém sempre fresco e confortável, garantindo um ambiente agradável para aproveitar com a família e os amigos.",
+    picture: "/ottanta.png",
   },
 ];
 
@@ -92,15 +92,12 @@ export default function Product() {
       whileInView={{
         opacity: 1,
       }}
-      viewport={{
-        margin: "-500px"
-      }}
-      className="bg-white w-full"
+      className=" w-full"
       id="produtos"
     >
-      <div className="text-black wrapper flex-col justify-between px-6 gap-8 py-28">
+      <div className="text-black dark:text-white wrapper flex-col justify-between px-6 gap-12 py-28 response:gap-8  tablet:py-16">
         <div className="flex flex-col">
-          <h2 className="text-primary text-5xl font-primary response:text-3xl response:text-center">
+          <h2 className="text-primary dark:text-white text-5xl font-primary response:text-3xl response:text-center">
             Nossa linha de produtos
           </h2>
           <span className="text-xl font-light response:text-lg response:text-center">
@@ -116,7 +113,7 @@ export default function Product() {
                   {products[selectedIndex].name}
                 </h2>
                 <span className="response:text-sm">
-                  Liso e etrusco/ cementicio e atérmico
+                  Liso / Rústico / Esplendore / Cementício / Atérmico 
                 </span>
               </div>
               <div className="flex gap-2">
@@ -124,7 +121,7 @@ export default function Product() {
                   <button
                     key={index}
                     className={`w-3 h-3 rounded-full transition-colors ${
-                      index === selectedIndex ? "bg-primary" : "bg-gray-300"
+                      index === selectedIndex ? "bg-primary dark:bg-white" : "bg-gray-300 dark:bg-stone-800"
                     }`}
                     onClick={() => emblaApi?.scrollTo(index)}
                     aria-label={`Slide ${index + 1}`}
@@ -135,14 +132,21 @@ export default function Product() {
             <p className="text-xl response:text-base response:text-center">
               {products[selectedIndex].description}
             </p>
+            <div className="w-full flex items-center response:justify-center">
+              <Link href="#catalogo">
+                <button className="bg-primary text-white dark:bg-white dark:text-primary font-primary font-semibold px-8 py-4 response:px-4 response:py-2 response:text-sm">
+                  Ver catálogo completo
+                </button>
+              </Link>
+            </div>
           </div>
           <div className="flex flex-col gap-8">
-            <div className="relative overflow-hidden min-w-full" ref={emblaRef}>
+            <div className="relative overflow-hidden w-full" ref={emblaRef}>
               <div className="flex transition-transform ease-out duration-300 gap-8">
                 {products.map((product, index) => (
                   <div
                     key={index}
-                    className="min-w-full min-h-[500px flex items-center justify-center bg-gray-200"
+                    className="min-w-full flex items-center justify-center "
                   >
                     <img
                       src={product.picture}
@@ -153,13 +157,6 @@ export default function Product() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-full flex items-center response:justify-center">
-          <Link href="#catalogo">
-            <button className="bg-primary text-white font-primary px-8 py-4">
-              Ver catálogo completo
-            </button>
-          </Link>
         </div>
       </div>
     </motion.div>

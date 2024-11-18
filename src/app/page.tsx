@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Header from "./components/header";
 import WhatsAppButton from "@/components/whatsapp";
 import EmblaCarousel from "./components/embla-components/EmblaCarrousel";
@@ -9,9 +9,10 @@ import FormSection from "./components/formsection";
 import Footer from "./components/footer";
 
 export default function Home() {
+
   return (
     <main>
-      <Header/>
+      <Header />
       <EmblaCarousel />
       <About />
       <Product /> 

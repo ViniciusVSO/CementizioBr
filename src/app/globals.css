@@ -19,11 +19,15 @@
 
 /* global.css */
 
+html {
+  transition: background-color 1s ease, color 1s ease;
+}
+
 .embla {
   overflow: hidden;
   width: 100%;
   position: relative;
-  height: 91.5vh; 
+  height: 91.7vh; 
   top: 0;
   left: 0;
 }

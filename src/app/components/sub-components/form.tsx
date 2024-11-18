@@ -59,13 +59,13 @@ export default function Form() {
                   src="/catalogoBanner.png"
                   alt="Cementizio Catálogo Banner"
                 />
-                <h2 className="text-2xl text-primary font-primary text-center">
+                <h2 className="text-2xl text-primary dark:text-white font-primary text-center">
                   CATÁLOGO DE PISOS & REVESTIMENTOS
                 </h2>
               </div>
               <button
                 type="submit"
-                className="bg-primary text-white font-primary p-3"
+                className="bg-primary text-white font-medium dark:bg-white dark:text-primary font-primary p-3"
               >
                 Concluir
               </button>

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import CementizioLogo from "../assets/images/cementizio-logo.png";
+import CementizioLogoDark from "../assets/images/cementizio-logo.png";
+import CementizioLogoLight from "../assets/images/cementizio-logo-alternativa.png";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
@@ -7,12 +10,13 @@ import {
 } from "@tabler/icons-react";
 import { Mail } from "lucide-react";
 import SocialMediaLink from "./sub-components/socialMediaLinks";
+import { useEffect, useState } from "react";
 
 let socialLinks = [
   {
-    socialName: "@cementiziobr",
+    socialName: "@cementizio",
     Icon: IconBrandInstagram,
-    link: "https://www.instagram.com/cementiziobr/",
+    link: "https://www.instagram.com/cementizio/",
   },
   {
     socialName: "Cementizio",
@@ -30,19 +34,48 @@ let socialLinks = [
 ];
 
 export default function Footer() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Persistir e sincronizar tema, se necessário
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    checkDarkMode();
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", checkDarkMode);
+
+    return () => {
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .removeEventListener("change", checkDarkMode);
+    };
+  }, []);
+
   return (
-    <div className="w-full bg-primary " id="contato">
-      <div className="wrapper  px-6 pb-6 pt-20 gap-8 flex flex-col text-white">
+    <div className="w-full shadow-top-sh " id="contato">
+      <div className="wrapper  px-6 pb-6 pt-20 gap-8 flex flex-col dark:text-white text-primary">
         <div className="w-full flex justify-between  tablet:flex-col gap-8">
           <div className="flex flex-col gap-10">
             <Image
-              src={CementizioLogo}
-              width={200}
-              height={80}
+              className=" block dark:hidden"
+              src={CementizioLogoLight}
+              width={180}
+              height={60}
+              alt="Cementizio Logo"
+            />
+            <Image
+              className=" hidden dark:block"
+              src={CementizioLogoDark}
+              width={180}
+              height={60}
               alt="Cementizio Logo"
             />
             <div className="flex flex-col gap-4">
-              <span className="text-xl font-primary">Contatos</span>
+              <span className="text-xl font-medium font-primary">Contatos</span>
               <div className="flex flex-col gap-2">
                 {socialLinks.map((link, index) => (
                   <SocialMediaLink

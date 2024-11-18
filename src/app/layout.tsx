@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Raleway, Cinzel } from "next/font/google";
 import "./globals.css";
 
@@ -21,9 +20,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${cinzel.variable} ${raleway.variable}`}
-      >
-        {children}
+        className={`${cinzel.variable} ${raleway.variable} dark:bg-primary`}
+      >{children}
       </body>
     </html>
   );

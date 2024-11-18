@@ -63,21 +63,19 @@ export default function Benefits() {
     setActiveIndex(index);
   };
   return (
-    <div  className="w-full bg-primary">
+    <div  className="w-full">
       <motion.div initial={{
         opacity: 0,
       }}
       whileInView={{
         opacity: 1,
       }}
-      viewport={{
-        margin: "-500px"
-      }} className="wrapper text-white px-6 py-28 gap-8 flex flex-col">
+       className="wrapper dark:text-white text-primary px-6 py-28 gap-12 flex flex-col  tablet:py-16">
         <div className="flex flex-col items-center">
-          <h2 className="text-center text-white text-5xl font-primary response:text-3xl">
+          <h2 className="text-center text-5xl font-primary response:text-3xl">
             Porque escolher a cementizio?
           </h2>
-          <span className="text-white text-xl text-center font-thin response:text-lg">
+          <span className="text-xl text-center font-light response:text-lg">
             Algumas das vantagens e benefícios de nossos serviços
           </span>
         </div>
@@ -87,10 +85,10 @@ export default function Benefits() {
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger>
                   <div className="">{benefit.icon}</div>
-                  <span className="font-primary font-thin text-start response:text-base">{benefit.name}</span>
+                  <span className="font-primary font-medium text-start response:text-base">{benefit.name}</span>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-xl font-thin p-2">{benefit.description}</p>
+                  <p className="text-xl font-normal p-2 response:text-base">{benefit.description}</p>
                 </AccordionContent>
               </AccordionItem>
             ))}
