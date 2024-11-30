@@ -2,12 +2,18 @@
 
 import InputGroup from "./inputGroup";
 import SelectGroup from "./selectGroup";
+import { useForm } from 'react-hook-form';
 
 export default function Form() {
+  const { register, handleSubmit } = useForm();
+
+  function createUser(data:any) {
+    console.log(data);
+  }
 
   return (
         <form
-          
+          onSubmit={handleSubmit(createUser)}
           className="flex w-full flex-col gap-4 h-full"
         >
           <div className="flex justify-between gap-10 h-full  tablet:flex-col">
@@ -17,39 +23,44 @@ export default function Form() {
                 label="Nome Completo"
                 placeholder="Digite seu nome completo"
                 id="nome" 
+                register={register}
               />
               <InputGroup
                 type="email"
                 label="Email"
                 placeholder="exemplo@email.com"
                 id="email" 
+                register={register}
               />
               <InputGroup
                 type="text"
                 label="Telefone"
                 placeholder="(00) 0000-0000"
                 id="tel" 
+                register={register}
               />
               <InputGroup
                 type="text"
                 label="CEP"
                 placeholder="00000-000"
                 id="cep"
+                register={register}
               />
               <InputGroup
                 type="text"
                 label="Logradouro"
                 placeholder="Digite o logradouro completo da sua residência"
                 id="logradouro"
-                
+                register={register}
               />
               <InputGroup
                 type="text"
                 label="Número da Residência"
                 placeholder="Digite o número da residência"
                 id="number_resid" 
+                register={register}
               />
-              <SelectGroup id="register"  />
+              <SelectGroup id="register" register={register}  />
             </div>
             <div className="flex flex-col w-1/2 justify-between  tablet:w-full">
               <div className="flex flex-col items-center gap-6 tablet:hidden">
