@@ -14,7 +14,7 @@ export default function SelectGroup({ id, register }: SelectGroupProps) {
       </label>
       <select id={id} {...register(id)} className="appearance-none border border-primary dark:border-white dark:bg-primary bg-transparent py-3 px-2 focus:outline-none">
         <option value="0">Selecione uma opção</option>
-        <option value="Conhecer_catalogo">Apenas conhecer o catálogo</option>
+        <option value="Conhecer o Catalogo">Apenas conhecer o catálogo</option>
         <option value="Arquiteto">Sou arquiteto</option>
         <option value="Lojista">Sou lojista</option>
         <option value="Consumidor">Sou consumidor</option>
