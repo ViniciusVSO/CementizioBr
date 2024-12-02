@@ -33,7 +33,6 @@ export async function POST(req: NextRequest) {
         throw new Error("Erro ao enviar dados para a planilha.");
       }
       
-      const result = await response.json();
 
     return NextResponse.json({ message: "Bateu" }, {status: 200});
 

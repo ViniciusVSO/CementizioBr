@@ -3,6 +3,7 @@ import { UseFormRegister } from "react-hook-form";
 
 type SelectGroupProps = {
   id: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   register: UseFormRegister<any>;
 };
 

@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 import { MAIL_CONSTRANTS } from "../utils/constrants/index";  // Ajuste o caminho conforme necessário
 import { IEmailService } from "../interfaces/email-service/IEmailService";
-import path from 'path';
 
 export const emailServiceFactory = (): IEmailService => new EmailService();
 
