@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       "Confirmação de Dados Recebidos"
     );
 
-    const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbxccKkWcfZe0uM6DMkHbsZSXUOxTk-DlFJmdjqExwtF2N0yJIP30CxyZAQ9hvuYHdMJ8w/exec";  // Substitua pela URL do seu Google Apps Script
+    const googleAppsScriptUrl = "https://script.google.com/macros/s/AKfycbxO2WqrAQ_k_bXG4IxqK5XAG4wJuqqubjhKKKcU_KDVa9BbWNkbYEOAnxGUr-MFmkRlDQ/exec"; 
     const response = await fetch(googleAppsScriptUrl, {
       method: "POST",
       headers: {
